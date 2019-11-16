@@ -62,7 +62,7 @@ def self.find_by_name(name)
 end
 def self.find_by(attribute)
   #binding.pry
-  if attribute.values[0].class == Integer
+  if attribute.values[0].class == Fixnum
     value = attribute.values[0]
   else value = "'#{attribute.values[0]}'"
   end
