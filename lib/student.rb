@@ -66,7 +66,7 @@ def self.find_by(attribute)
     value = attribute.values[0]
   else value = "'#{attribute.values[0]}'"
   end
-  sql = "SELECT * FROM #{self.table_name} WHERE '#{attribute.keys[0].to_s}' = #{value}"
+  sql = "SELECT * FROM #{self.table_name} WHERE #{attribute.keys[0].to_s} = #{value}"
     DB[:conn].execute(sql)
 end
 
