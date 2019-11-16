@@ -64,9 +64,9 @@ def self.find_by(attribute)
   #binding.pry
   if attribute.values[0].class == Integer
     value = attribute.values[0]
-  else attribute = "'#{attribute.values[0]}'"
+  else value = "'#{attribute.values[0]}'"
   end
-  sql = "SELECT * FROM #{self.table_name} WHERE '#{attribute.keys[0].to_s}' = #{attribute}"
+  sql = "SELECT * FROM #{self.table_name} WHERE '#{attribute.keys[0].to_s}' = #{value}"
     DB[:conn].execute(sql)
 end
 
